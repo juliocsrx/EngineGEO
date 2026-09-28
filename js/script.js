@@ -177,3 +177,28 @@ if(year){
 
 
 }
+
+
+// ===============================
+// EDUCAÇÃO: alternar painéis por ano
+// ===============================
+
+document.addEventListener('DOMContentLoaded', () => {
+    const yearBtns = document.querySelectorAll('.year-btn');
+    const yearPanels = document.querySelectorAll('.year-panel');
+
+    function setActive(year){
+        yearBtns.forEach(b => b.classList.toggle('active', b.dataset.year === year));
+        yearPanels.forEach(p => p.classList.toggle('active', p.dataset.year === year));
+    }
+
+    yearBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            setActive(btn.dataset.year);
+        });
+    });
+
+    // inicializa com 6º ano ativo
+    if(yearBtns.length) setActive('6');
+});

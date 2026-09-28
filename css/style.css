@@ -922,69 +922,101 @@ transform:translateY(-20px);
 
 
 
-.cards {
+    to {
 
-    grid-template-columns:
+    opacity:1;
 
-    repeat(2,1fr);
+    transform:translateY(0);
 
-}
+    }
 
-
-
-.nav-links {
-
-    display:none;
-
-}
+    }
 
 
+    /* =====================
+       EDUCAÇÃO / BLOG
+    ===================== */
 
-.menu-mobile {
+    .education-section {
+        padding: 70px 0;
+    }
 
-    display:flex;
+    .education-options h2 {
+        color: var(--blue-dark);
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
 
-}
+    .year-buttons {
+        display: flex;
+        gap: 28px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 24px;
+        padding: 18px 0 36px 0;
+    }
 
+    .year-btn {
+        display: inline-block;
+        background: var(--white);
+        color: var(--blue-dark);
+        padding: 14px 28px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(2,6,23,0.06);
+        border: 1px solid rgba(37,99,235,0.08);
+        font-weight: 600;
+        transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    }
 
+    .year-btn.active,
+    .year-btn:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 40px rgba(0,0,0,.10);
+        background: var(--blue);
+        color: var(--white);
+    }
 
-.footer-content {
+    @media (max-width: 700px) {
+        .year-buttons {
+            flex-direction: column;
+            gap: 14px;
+        }
+        .year-btn {
+            width: 100%;
+            text-align: center;
+        }
+    }
 
-    grid-template-columns:1fr;
+    /* Painéis de material */
+    .year-panels {
+        margin-top: 28px;
+    }
+    .year-panel { display:none; }
+    .year-panel.active { display:block; }
 
-}
+    .materials-grid {
+        display:grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap:18px;
+    }
 
+    .material-card {
+        background: var(--white);
+        padding:18px 22px;
+        border-radius:12px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        box-shadow:0 10px 30px rgba(0,0,0,.04);
+    }
 
-}
+    .material-left { display:flex; align-items:center; gap:14px; }
+    .material-icon { width:44px; height:44px; border-radius:10px; background:#E6FFFA; display:flex; align-items:center; justify-content:center; font-size:18px; }
+    .material-info h3 { margin-bottom:6px; font-size:16px; }
+    .material-info p { color:var(--gray); font-size:13px; }
+    .download-btn { background:var(--blue); color:white; padding:10px 16px; border-radius:999px; font-weight:700; }
 
-
-
-
-
-
-
-@media(max-width:600px){
-
-
-.header {
-    height:70px;
-}
-
-.navbar {
-    height:70px;
-}
-
-.fundo {
-    padding-top:70px;
-}
-
-.logo-area img {
-
-    width:100px;
-
-}
-
-
+    @media (max-width:900px){ .materials-grid{ grid-template-columns:1fr; } }
 
 .cards {
 
